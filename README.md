@@ -1,0 +1,1 @@
+# NIFTY-50-Index-Forecasting-Using-ARIMA-Model-in-R
