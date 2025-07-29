@@ -26,7 +26,7 @@ This project presents a complete time-series analysis and forecasting pipeline f
 * [`quantmod`](https://cran.r-project.org/web/packages/quantmod/index.html): Financial data retrieval
 * [`forecast`](https://pkg.robjhyndman.com/forecast/): Time series modeling and forecasting
 * [`tseries`](https://cran.r-project.org/web/packages/tseries/index.html): Statistical testing (ADF test)
-* [`ggplot2`](https://ggplot2.tidyverse.org/): Data visualization
+
 
 ---
 
