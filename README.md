@@ -1,60 +1,72 @@
 # 📈 NIFTY-50 Index Forecasting Using ARIMA Model in R
 
-This project involves the time-series analysis and forecasting of the NIFTY-50 stock index using the ARIMA (AutoRegressive Integrated Moving Average) model in **R**. The goal is to build a statistically sound model that can capture the temporal dynamics of the stock index and forecast its future movements based on historical data.
+This project presents a complete time-series analysis and forecasting pipeline for the **NIFTY-50** stock index using the **ARIMA (AutoRegressive Integrated Moving Average)** model in **R**. The objective is to build a robust and statistically sound model that captures the temporal dynamics of the index and provides accurate short- to medium-term forecasts based on historical price data.
 
 ---
 
-## 🔍 Project Objectives
+## 🎯 Project Objectives
 
-- Import and clean historical NIFTY-50 index data
-- Perform exploratory data analysis (EDA)
-- Test for stationarity and transform the data as needed
-- Build an optimal ARIMA model using `auto.arima()`
-- Evaluate model fit using AIC, residuals, and diagnostics
-- Forecast future index values and visualize the predictions
+* ✅ Import and clean historical NIFTY-50 index data
+* ✅ Perform comprehensive Exploratory Data Analysis (EDA)
+* ✅ Test for stationarity and transform the data accordingly
+* ✅ Build and tune an optimal ARIMA model using `auto.arima()`
+* ✅ Evaluate model fit using AIC, residual diagnostics, and white noise tests
+* ✅ Forecast future index values and visualize prediction intervals
 
 ---
 
 ## 📊 Technologies & Packages Used
 
-- **Programming Language:** R
-- **Key Libraries:**
-  - `quantmod` – Financial data retrieval
-  - `forecast` – Time series modeling
-  - `tseries` – Statistical tests like ADF
-  - `ggplot2` – Data visualization
+**Programming Language:**
+
+* R (RStudio recommended)
+
+**Primary Packages:**
+
+* [`quantmod`](https://cran.r-project.org/web/packages/quantmod/index.html): Financial data retrieval
+* [`forecast`](https://pkg.robjhyndman.com/forecast/): Time series modeling and forecasting
+* [`tseries`](https://cran.r-project.org/web/packages/tseries/index.html): Statistical testing (ADF test)
+* [`ggplot2`](https://ggplot2.tidyverse.org/): Data visualization
 
 ---
 
-## 🧪 Methodology
+## 🔬 Methodology
 
-1. **Data Collection**
-   - Downloaded NIFTY-50 index data using the `quantmod` package.
+1. **📥 Data Collection**
 
-2. **Data Preprocessing**
-   - Cleaned and converted the data into a time series format suitable for modeling.
+   * Pulled historical NIFTY-50 data directly from Yahoo Finance using `quantmod::getSymbols()`.
 
-3. **Exploratory Data Analysis**
-   - Visualized index trends and decomposed the time series into trend, seasonal, and residual components.
+2. **🧹 Data Preprocessing**
 
-4. **Stationarity Testing**
-   - Used the Augmented Dickey-Fuller (ADF) test to check for stationarity.
-   - Differencing applied to remove non-stationarity.
+   * Converted the data into a time series object, handled missing values, and focused on adjusted closing prices.
 
-5. **Model Building**
-   - Used `auto.arima()` to automatically select the best-fitting ARIMA model based on AIC/BIC.
-   - Analyzed model residuals for white noise behavior.
+3. **📈 Exploratory Data Analysis (EDA)**
 
-6. **Forecasting**
-   - Forecasted future values of the NIFTY-50 index using the ARIMA model.
-   - Plotted the forecasts with 80% and 95% confidence intervals.
+   * Visualized long-term index trends
+   * Decomposed the series into trend, seasonality, and residuals for deeper insight
+
+4. **🧾 Stationarity Testing**
+
+   * Conducted the Augmented Dickey-Fuller (ADF) test
+   * Applied appropriate differencing to remove trends and stabilize variance
+
+5. **⚙️ Model Building**
+
+   * Leveraged `auto.arima()` to identify the best ARIMA(p,d,q) configuration
+   * Evaluated residuals using ACF, PACF, QQ plots, and the Ljung-Box test to ensure model adequacy
+
+6. **📤 Forecasting**
+
+   * Generated 30-day forecasts with 80% and 95% confidence intervals
+   * Visualized forecasts against historical data for intuitive interpretation
 
 ---
 
-## 📈 Forecast Output
+## 📉 Forecast Output & Insights
 
-- The ARIMA model generated forecasts that visually and statistically aligned well with the time series behavior.
-- Confidence intervals indicate the expected range of index values, helping in risk-aware decision-making.
+* The model produces forecasts that align with observed patterns in the index, offering a strong fit.
+* Confidence intervals provide a quantitative measure of uncertainty, aiding in risk-aware financial planning.
+* The output supports use cases such as investment strategy evaluation, volatility assessment, and academic research.
 
 ---
 
@@ -63,6 +75,8 @@ This project involves the time-series analysis and forecasting of the NIFTY-50 s
 ```bash
 NIFTY-50-Index-Forecasting-Using-ARIMA-Model-in-R/
 │
-├── Stock Index Time-Series Forecast.Rmd   # Main R Markdown file with code and explanation
-├── Stock Index Time-Series Forecast.html  # HTML output of the analysis
-├── README.md                              # Project overview
+├── Stock Index Time-Series Forecast.Rmd   # Main R Markdown file containing analysis and code
+├── README.md                              # Project documentation and overview
+```
+
+> 📝 Note: The `.html` output file has been excluded from the repository. You can generate it by knitting the `.Rmd` file in RStudio.
